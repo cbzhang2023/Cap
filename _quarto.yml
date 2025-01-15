@@ -1,5 +1,38 @@
 project:
-  title: "cap"
+  type: website
+
+
+website:
+  title: "Cap"
+  navbar:
+    left:
+      - text: "Proposal"
+        menu:
+          - text: "Proposal"
+            href: "Proposal/Proposal.html"
+
+      - text: "APP"
+        menu:
+          - text: "APP"
+            href: "In-class_EX/In-class_EX01/In-class EX01.html"
+
+      - text: "Intro"
+        menu:
+          - text: "Intro"
+            href: "Take-home_Ex/Take-home_Ex01/Take-home Exercise 1.html"
+
+
+    right:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+
+format:
+  html:
+    theme: Superhero
+    css: styles.css
+    toc: true
 
 editor: visual
 
