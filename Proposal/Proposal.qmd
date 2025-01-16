@@ -1,6 +1,14 @@
 ---
 title: "Proposal"
-format: html
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+  output-width: Inf
+format: 
+  html:
+    code-fold: true
 ---
 
 ## Proposal: Predicting Rental Prices with Business Trends
@@ -99,17 +107,34 @@ To transform detailed address information into precise spatial coordinates (lati
 
     Input: Full address string.
 
-    ![](images/clipboard-3740434886.png)
+    ```{r}
+    library(readr)
 
-    Output: Latitude and longitude values returned by the API.
+    reantal_unclean_data <- read_csv("data/RentingOutofFlats2024CSV.csv")
 
-    ![](images/clipboard-25686400.png)
+    head(reantal_unclean_data, 5)
 
-3.  **API Configuration**
+    ```
+
+    ![](/images/clipboard-3740434886.png)
+
+3.  Output: Latitude and longitude values returned by the API.
+
+    ```{r}
+    library(readr)
+
+    reantal_data <- read_csv("data/merged_hdb_with_coordinates.csv")
+
+    head(reantal_unclean_data, 5)
+    ```
+
+    ![](/images/clipboard-25686400.png)
+
+4.  **API Configuration**
 
     Geocode.xyz provides accurate geocoding for global locations, including Singapore. The API allows queries for full address strings and returns precise geographic coordinates along with additional metadata.
 
-4.  **Error Handling and Validation**
+5.  **Error Handling and Validation**
 
     Monitor the API responses to handle:
 
@@ -306,7 +331,7 @@ This project will leverage a variety of R tools and packages to perform data cle
 ### 5.1 R Packages
 
 | **Category** | **Packages** | **Description** |
-|----|----|----|
+|------------------|-------------------|-----------------------------------|
 | **Data Cleaning** | `dplyr`, `tidyr` | For data wrangling, handling missing values, and reshaping data. |
 | **Geocoding** | `ggmap`, `osmdata`, `tmaptools` | For converting addresses into spatial coordinates (latitude and longitude). |
 | **Spatial Analysis** | `sf`, `spatstat`, `spdep`, `NKDE` | For handling spatial data, performing spatial point pattern analysis, and spatial autocorrelation. |
